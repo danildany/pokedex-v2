@@ -20,6 +20,8 @@ const TYPES = [
 ];
 let prevUrl = null;
 let nextUrl = null;
+
+
 const resetScreen = (types)=>{
     for (const type of types) {
         $mainScreen.classList.remove(type)
