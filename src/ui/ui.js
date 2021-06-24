@@ -60,6 +60,9 @@ const handleRightbutton = async (e)=>{
     }
 }
 const handleLeftbutton = async (e)=>{
+    if (!nextUrl) {
+        prevUrl='https://pokeapi.co/api/v2/pokemon?offset=1080&limit=20'
+    }
     if (prevUrl) {
         let pokeLista = (await listadoDePokemones(prevUrl));
         manejaListaDePokemones(pokeLista);
@@ -92,8 +95,8 @@ export const manejaListaDePokemones = (dataLista) => {
      for (let i = 0; i < $pokeListItems.length; i++) {
          const pokeItem = $pokeListItems[i];
          const resultData = results[i];
-         const { name,url } =resultData;
          if (resultData) {
+             const { name,url } =resultData;
              let id = url.split('/')[url.split('/').length - 2];
              pokeItem.textContent = id + '. ' + capitalize(name);
             }else {
