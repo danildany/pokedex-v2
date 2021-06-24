@@ -3,6 +3,7 @@ import { datosPokemon,listadoDePokemones } from "../api/api.js";
 
 
 const $mainScreen = document.querySelector('.main-screen');
+const $cover = document.querySelector('.cover');
 const $pokeName = document.querySelector('.poke-name');
 const $pokeID = document.querySelector('.poke-id');
 const $pokeFrontImage = document.querySelector('.poke-front-image');
@@ -27,18 +28,18 @@ let prevUrl = null;
 let nextUrl = null;
 
 const resetScreen = (types)=>{
-    const $mainScreen = document.querySelector('.main-screen');
     for (const type of types) {
         $mainScreen.classList.remove(type)
     }
+    $pokeTypeTwo.classList.remove('hide')
 }
 const capitalize = (str)=>{
     let capStr = str[0].toUpperCase() + str.substr(1);
     return capStr
 }
 const manejaPantalla = (pokemon)=>{
+    $cover.classList.add('hide');
     resetScreen(TYPES);
-    $mainScreen.classList.remove('hide');
     $mainScreen.classList.add(pokemon.types[0]['type']['name']);
 
 }
@@ -65,8 +66,8 @@ const handleLeftbutton = async (e)=>{
     }
 }
 const handlePokeItem = async (e)=>{
+    $cover.classList.remove('hide');
     let pokemon = capturaPokemon(await datosPokemon(e.target.textContent.split('.')[0]));
-    console.log(pokemon);
     manejaPantallaPokemon(pokemon);
 }
  
