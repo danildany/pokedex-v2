@@ -1,6 +1,6 @@
 import capturaPokemon from "../manejadatos/manejaDatos.js";
 import { datosPokemon,listadoDePokemones } from "../api/api.js";
-
+import {capitalize} from './funciones.js'
 
 const $mainScreen = document.querySelector('.main-screen');
 const $cover = document.querySelector('.cover');
@@ -33,10 +33,7 @@ const resetScreen = (types)=>{
     }
     $pokeTypeTwo.classList.remove('hide')
 }
-const capitalize = (str)=>{
-    let capStr = str[0].toUpperCase() + str.substr(1);
-    return capStr
-}
+
 const manejaPantalla = (pokemon)=>{
     $cover.classList.add('hide');
     resetScreen(TYPES);

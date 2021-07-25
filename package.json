@@ -1,0 +1,29 @@
+{
+  "name": "pokedex-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@types/jest": "^26.0.24",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "test:dev":"jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danildany/pokedex-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danildany/pokedex-v2/issues"
+  },
+  "homepage": "https://github.com/danildany/pokedex-v2#readme"
+}
